@@ -10,12 +10,13 @@ const schema = buildSchema(mockSchema)
 const port = process.env.PORT || 3000
 
 const root = {
-  videos: videosMock.videos,
+  hello: () => "hello",	
+  videos: () => videosMock.videos,
   video: ({ id }) =>
     videosMock.videos.filter(
       (item) => item.id === id
     )[0],
-  projects: projectsMock.projects,
+  projects: () =>  projectsMock.projects,
   project: ({ id }) =>
     projectsMock.projects.filter(
       (item) => item.id === id
