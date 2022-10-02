@@ -1,0 +1,31 @@
+type Videos {
+  id: String
+  cover: String
+  src: String
+  filename: String
+  size: String
+  resolutions: String
+  uploadedAt: String
+  tags: [String]
+}
+
+type VideosMock {
+  videos: [Videos]
+}
+
+
+
+
+type ProjectVideos {
+  id: String
+  cover: String
+  version: String
+  uploadedAt: String
+}
+
+type Project {
+  id: String
+  name: String
+  videos: [ProjectVideos]
+}
+
