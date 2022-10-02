@@ -7,7 +7,7 @@ const { buildSchema } = require("graphql")
 const mockSchema = require("./schema")
 const videosMock = require("./videosMockdata")
 const projectsMock = require("./projectsMockData")
-
+const feedbackMock = require("./feedbackMockData")
 const schema = buildSchema(mockSchema)
 const port = process.env.PORT || 3000
 
@@ -23,6 +23,7 @@ const root = {
     projectsMock.projects.filter(
       (item) => item.id === id
     )[0],
+  feedback: () => feedbackMock.feedback,
 }
 const app = express()
 app.use(cors())
