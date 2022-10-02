@@ -7,6 +7,7 @@ const videosMock = require("./videosMockdata")
 const projectsMock = require("./projectsMockData")
 
 const schema = buildSchema(mockSchema)
+const port = process.env.PORT || 3000
 
 const root = {
   videos: videosMock.videos,
@@ -29,7 +30,8 @@ app.use(
     graphiql: true,
   })
 )
-app.listen(4000)
-console.log(
-  "Running a GraphQL API server at http://localhost:4000/graphql"
-)
+app.listen(port, () => {
+  console.log(
+    `Example app listening at http://localhost:${port}`
+  )
+})
