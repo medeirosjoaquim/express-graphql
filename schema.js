@@ -15,7 +15,7 @@ type Feedback {
   feedback: String
   updatedAt: Date
 }
-
+scalar Date
 type Video {
   id: String
   cover: String

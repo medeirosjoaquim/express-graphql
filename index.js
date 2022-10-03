@@ -8,7 +8,10 @@ const mockSchema = require("./schema")
 const videosMock = require("./videosMockdata")
 const projectsMock = require("./projectsMockData")
 const feedbackMock = require("./feedbackMockData")
+
 const schema = buildSchema(mockSchema)
+
+Object.assign(schema._typeMap.Date, new Date())
 const port = process.env.PORT || 3000
 
 const root = {
